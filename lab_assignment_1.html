@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abhinav Pandey | Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #111827;
+            background: #ffffff;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            background: #09244a;
+            color: white;
+            height: 88px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 4%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            font-size: 27px;
+            font-weight: 700;
+        }
+
+        .logo p {
+            color: #69b7ff;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 38px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #ffd900;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 325px;
+            background: linear-gradient(
+                110deg,
+                #edf6ff,
+                #dceeff
+            );
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 35px 18%;
+            gap: 50px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content h2 {
+            font-size: 38px;
+            color: #09244a;
+            margin-bottom: 4px;
+        }
+
+        .hero-content h3 {
+            color: #1261b0;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 17px;
+            line-height: 1.55;
+            margin-bottom: 20px;
+        }
+
+        .cv-btn {
+            display: inline-block;
+            background: #092f60;
+            color: white;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .cv-btn:hover {
+            background: #1261b0;
+            transform: translateY(-2px);
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 7px solid white;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.25);
+        }
+
+        /* ================= MAIN ================= */
+
+        .container {
+            width: 76%;
+            margin: auto;
+        }
+
+        .top-sections {
+            display: grid;
+            grid-template-columns: 1fr 0.8fr 1.5fr;
+            gap: 35px;
+            padding: 28px 0;
+        }
+
+        .section-title {
+            color: #09244a;
+            font-size: 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            color: #1267bd;
+        }
+
+        .about p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills ul {
+            padding-left: 20px;
+        }
+
+        .skills li {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #cbd5e1;
+            padding: 9px;
+            text-align: center;
+        }
+
+        table th {
+            background: #f4f7fa;
+            font-weight: 700;
+        }
+
+        /* ================= BOTTOM ================= */
+
+        .bottom-sections {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 35px;
+            padding-bottom: 28px;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .project-card {
+            border: 1px solid #d5dce5;
+            border-radius: 6px;
+            padding: 15px;
+            min-height: 145px;
+            transition: 0.3s;
+            background: white;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+        }
+
+        .project-card h3 {
+            font-size: 15px;
+            color: #09244a;
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .project-card a {
+            color: #0964bd;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contact label {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 9px;
+            border: 1px solid #ccd3dc;
+            border-radius: 4px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .contact input:focus,
+        .contact textarea:focus {
+            border-color: #1267bd;
+        }
+
+        .contact textarea {
+            height: 65px;
+            resize: vertical;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 5px;
+        }
+
+        .send-btn,
+        .reset-btn {
+            padding: 9px 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+        }
+
+        .send-btn {
+            background: #092f60;
+            color: white;
+        }
+
+        .reset-btn {
+            background: #e5e7eb;
+            color: #111827;
+        }
+
+        .send-btn:hover {
+            background: #1261b0;
+        }
+
+        /* ================= SOCIAL ================= */
+
+        .social {
+            margin-top: 25px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 22px;
+            margin-top: 12px;
+        }
+
+        .social-icons a {
+            font-size: 29px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .linkedin {
+            color: #0077b5;
+        }
+
+        .github {
+            color: #111;
+        }
+
+        .email {
+            color: #d44638;
+        }
+
+        .instagram {
+            color: #e1306c;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.15);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            height: 54px;
+            background: #09244a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 1000px) {
+
+            header {
+                height: auto;
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 35px 8%;
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-content h2 {
+                font-size: 30px;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .top-sections,
+            .bottom-sections {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 13px;
+            }
+
+            .profile-img {
+                width: 190px;
+                height: 190px;
+            }
+
+            .hero-content h2 {
+                font-size: 27px;
+            }
+
+            .hero-content h3 {
+                font-size: 20px;
+            }
+
+            table {
+                font-size: 10px;
+            }
+
+            table th,
+            table td {
+                padding: 6px 3px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            <h1>Abhinav Pandey</h1>
+            <p>CSE Student & Developer</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h2>Hi, I'm Abhinav Pandey</h2>
+
+            <h3>CSE Student & Cybersecurity Enthusiast</h3>
+
+            <p>
+                I am a Computer Science Engineering student passionate about
+                web development, cybersecurity and problem solving. I enjoy
+                building practical projects and learning modern technologies
+                to create useful digital solutions.
+            </p>
+
+            <a href="#" class="cv-btn">
+                <i class="fa-solid fa-download"></i>
+                Download CV
+            </a>
+
+        </div>
+
+
+        <!-- Random profile image -->
+        <img
+            class="profile-img"
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            alt="Abhinav Pandey Profile Photo"
+        >
+
+    </section>
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <main class="container">
+
+        <!-- TOP SECTIONS -->
+
+        <div class="top-sections">
+
+            <!-- ABOUT -->
+
+            <section class="about" id="about">
+
+                <h2 class="section-title">
+                    <i class="fa-solid fa-user"></i>
+                    About Me
+                </h2>
+
+                <p>
+                    I am a Computer Science Engineering student with a strong
+                    interest in software development and cybersecurity.
+                    I enjoy solving programming problems, exploring new
+                    technologies and working on real-world projects.
+                </p>
+
+                <br>
+
+                <p>
+                    My current focus is on improving my Java, DSA, web
+                    development and cybersecurity skills while building
+                    projects that strengthen my practical knowledge.
+                </p>
+
+            </section>
+
+
+            <!-- SKILLS -->
+
+            <section class="skills" id="skills">
+
+                <h2 class="section-title">
+                    <i class="fa-solid fa-code"></i>
+                    Skills
+                </h2>
+
+                <ul>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>React.js</li>
+                    <li>SQL</li>
+                    <li>Git & GitHub</li>
+                    <li>Cybersecurity Basics</li>
+                    <li>DSA</li>
+                </ul>
+
+            </section>
+
+
+            <!-- EDUCATION -->
+
+            <section id="education">
+
+                <h2 class="section-title">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Education
+                </h2>
+
+                <table>
+
+                    <tr>
+                        <th>Qualification</th>
+                        <th>Institute</th>
+                        <th>Year</th>
+                        <th>CGPA / %</th>
+                    </tr>
+
+                    <tr>
+                        <td>B.Tech CSE</td>
+                        <td>Engineering University</td>
+                        <td>2025 - 2029</td>
+                        <td>8.4 CGPA</td>
+                    </tr>
+
+                    <tr>
+                        <td>12th PCM</td>
+                        <td>Senior Secondary School</td>
+                        <td>2025</td>
+                        <td>86%</td>
+                    </tr>
+
+                    <tr>
+                        <td>10th</td>
+                        <td>Senior Secondary School</td>
+                        <td>2023</td>
+                        <td>91%</td>
+                    </tr>
+
+                </table>
+
+            </section>
+
+        </div>
+
+
+        <!-- BOTTOM SECTIONS -->
+
+        <div class="bottom-sections">
+
+            <!-- LEFT SIDE -->
+
+            <div>
+
+                <!-- PROJECTS -->
+
+                <section id="projects">
+
+                    <h2 class="section-title">
+                        <i class="fa-solid fa-briefcase"></i>
+                        Projects
+                    </h2>
+
+                    <div class="projects-grid">
+
+                        <div class="project-card">
+
+                            <h3>
+                                1. Civic Issue Reporting System
+                            </h3>
+
+                            <p>
+                                A web-based platform for reporting civic
+                                problems and tracking complaints with
+                                admin dashboard and automated escalation.
+                            </p>
+
+                            <a href="#">
+                                View Project →
+                            </a>
+
+                        </div>
+
+
+                        <div class="project-card">
+
+                            <h3>
+                                2. Student Management System
+                            </h3>
+
+                            <p>
+                                A management application designed to store,
+                                update and manage student information
+                                efficiently.
+                            </p>
+
+                            <a href="#">
+                                View Project →
+                            </a>
+
+                        </div>
+
+
+                        <div class="project-card">
+
+                            <h3>
+                                3. Fake News Detector
+                            </h3>
+
+                            <p>
+                                A machine learning based application that
+                                analyzes news content and predicts whether
+                                the information is reliable or suspicious.
+                            </p>
+
+                            <a href="#">
+                                View Project →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SOCIAL -->
+
+                <section class="social">
+
+                    <h2 class="section-title">
+                        <i class="fa-solid fa-link"></i>
+                        Connect with me
+                    </h2>
+
+                    <div class="social-icons">
+
+                        <a
+                            href="https://www.linkedin.com/"
+                            target="_blank"
+                            class="linkedin"
+                        >
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+
+                        <a
+                            href="https://github.com/"
+                            target="_blank"
+                            class="github"
+                        >
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                        <a
+                            href="mailto:abhinav@example.com"
+                            class="email"
+                        >
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+
+                        <a
+                            href="#"
+                            class="instagram"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <section class="contact" id="contact">
+
+                <h2 class="section-title">
+                    <i class="fa-solid fa-envelope"></i>
+                    Contact Me
+                </h2>
+
+                <form id="contactForm">
+
+                    <label>Name</label>
+
+                    <input
+                        type="text"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+
+                    <label>Message</label>
+
+                    <textarea
+                        placeholder="Type your message..."
+                        required
+                    ></textarea>
+
+
+                    <div class="buttons">
+
+                        <button
+                            type="submit"
+                            class="send-btn"
+                        >
+                            Send Message
+                        </button>
+
+                        <button
+                            type="reset"
+                            class="reset-btn"
+                        >
+                            Reset
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026 Abhinav Pandey. All Rights Reserved.
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        document
+            .getElementById("contactForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                alert("Thank you! Your message has been submitted.");
+
+                this.reset();
+
+            });
+
+
+        // Active navbar link
+
+        const navLinks = document.querySelectorAll("nav a");
+
+        navLinks.forEach(link => {
+
+            link.addEventListener("click", function() {
+
+                navLinks.forEach(item =>
+                    item.classList.remove("active")
+                );
+
+                this.classList.add("active");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
